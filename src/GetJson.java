@@ -53,5 +53,7 @@ public class GetJson {
         } finally {
             con.disconnect();
         }
+
+        System.out.println(jsonObject);
     }
 }
