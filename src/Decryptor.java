@@ -25,12 +25,24 @@ public class Decryptor {
     }
 
     public void decryptorMaker() {
-        String cifradoT = getCifrado().replaceAll("\\s+", "").replace(",","").replace(".","");
+        String cifradoT = getCifrado().replaceAll("\\s+", "").replace(",", "").replace(".", "");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < cifradoT.length(); i++) {
             sb.append((char) (cifradoT.charAt(i) - 10));
         }
         System.out.println(sb);
+    }
+
+    public void decryptor2() {
+
+        char[] cifradoT = getCifrado().replaceAll("\\s+", "").replace(",", "").replace(".", "").toCharArray();
+        int count = getNumero_casas();
+
+        for (int i = 0; i < cifradoT.length; i++) {
+            cifradoT[i] =(char) ((cifradoT[i] - 'a' + 26 - count) % 26 + 'a');
+            new String(cifradoT);
+        }
+        System.out.println(cifradoT);
     }
 }
 
