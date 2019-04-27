@@ -25,15 +25,12 @@ public class Decryptor {
     }
 
     public void decryptorMaker() {
-
-    char[] alfabetoC = alfabeto.toCharArray();
-
-        for (int i = 0; i <= getCifrado().length(); i++) {
-            for (char c: getCifrado().toCharArray()) {
-
-            }
+        String cifradoT = getCifrado().replaceAll("\\s+", "").replace(",","").replace(".","");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < cifradoT.length(); i++) {
+            sb.append((char) (cifradoT.charAt(i) - 10));
         }
-
+        System.out.println(sb);
     }
 }
 
