@@ -9,7 +9,7 @@ public class GetJson {
 
         FileWriter fr = null;
         String url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=e9895bb76c916cd9abec54a75b3228a449d13d63";
-        Encriptor content = new Encriptor();
+        Decryptor content = new Decryptor();
 
 //        try {
 //
@@ -41,6 +41,6 @@ public class GetJson {
 //            con.disconnect();
 //        }
 
-
+        content.decryptorMaker();
     }
 }

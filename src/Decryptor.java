@@ -24,8 +24,15 @@ public class Decryptor {
         this.cifrado = cifrado;
     }
 
-    public void decryptorMaker(){
+    public void decryptorMaker() {
 
+    char[] alfabetoC = alfabeto.toCharArray();
+
+        for (int i = 0; i <= getCifrado().length(); i++) {
+            for (char c: getCifrado().toCharArray()) {
+
+            }
+        }
 
     }
 }
