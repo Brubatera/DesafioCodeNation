@@ -26,8 +26,7 @@ public class ReadFiletoJson {
                         (Paths.get("C:\\Users\\bruno\\IdeaProjects\\DesafioCodeNation\\answer.json"),
                                 StandardCharsets.UTF_8)) {
             stream.forEach(s -> contentBuilder.append(s).append("\n"));
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -40,5 +39,4 @@ public class ReadFiletoJson {
     public void setJsonObject(JSONObject jsonObject) {
         this.jsonObject = jsonObject;
     }
-
 }

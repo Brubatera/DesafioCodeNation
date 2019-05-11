@@ -29,19 +29,22 @@ public class Decryptor {
     public void decryptorFunc() {
 
         char[] cifradoT = getCifrado().toCharArray();
-        //.replaceAll("\\s+", "").replace(",", "").replace(".", "").toCharArray();
+
         int count = getNumero_casas();
 
         for (int i = 0; i < cifradoT.length; i++) {
-            cifradoT[i] = (char) ((cifradoT[i] - 'a' + 26 - count) % 26 + 'a');
-            new String(cifradoT);
+            Character character = cifradoT[i];
+            if (character != ' ' && character != ',' && character != '.') {
+                cifradoT[i] = (char) ((cifradoT[i] - 'a' + 26 - count) % 26 + 'a');
+                new String(cifradoT);
+            }
         }
 
         System.out.println(cifradoT);
     }
 
-    public void insertContent(){
-        objectJson.getJsonObject().put("decifrado",decifrado);
+    public void insertContent() {
+        objectJson.getJsonObject().put("decifrado", decifrado);
     }
 }
 

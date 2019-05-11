@@ -42,6 +42,6 @@ public class GetJson {
 //        }
 
         content.decryptorFunc();
-        content.insertContent();
+        //content.insertContent();
     }
 }
