@@ -36,7 +36,4 @@ public class ReadFiletoJson {
         return jsonObject;
     }
 
-    public void setJsonObject(JSONObject jsonObject) {
-        this.jsonObject = jsonObject;
-    }
 }
