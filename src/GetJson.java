@@ -41,6 +41,7 @@ public class GetJson {
 //            con.disconnect();
 //        }
 
-        content.decryptor2();
+        content.decryptorFunc();
+        content.insertContent();
     }
 }

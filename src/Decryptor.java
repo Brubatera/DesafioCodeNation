@@ -1,3 +1,6 @@
+import javax.xml.stream.events.Characters;
+import java.util.Arrays;
+
 public class Decryptor {
 
     private int numero_casas = 0;
@@ -6,7 +9,6 @@ public class Decryptor {
     private String decifrado = null;
     private String resumo_criptografico = null;
     private ReadFiletoJson objectJson = new ReadFiletoJson();
-    private String alfabeto = "A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S/T/U/V/W/X/Y/Z";
 
     public int getNumero_casas() {
         return objectJson.getJsonObject().getInt("numero_casas");
@@ -24,25 +26,22 @@ public class Decryptor {
         this.cifrado = cifrado;
     }
 
-    public void decryptorMaker() {
-        String cifradoT = getCifrado().replaceAll("\\s+", "").replace(",", "").replace(".", "");
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < cifradoT.length(); i++) {
-            sb.append((char) (cifradoT.charAt(i) - 10));
-        }
-        System.out.println(sb);
-    }
+    public void decryptorFunc() {
 
-    public void decryptor2() {
-
-        char[] cifradoT = getCifrado().replaceAll("\\s+", "").replace(",", "").replace(".", "").toCharArray();
+        char[] cifradoT = getCifrado().toCharArray();
+        //.replaceAll("\\s+", "").replace(",", "").replace(".", "").toCharArray();
         int count = getNumero_casas();
 
         for (int i = 0; i < cifradoT.length; i++) {
-            cifradoT[i] =(char) ((cifradoT[i] - 'a' + 26 - count) % 26 + 'a');
+            cifradoT[i] = (char) ((cifradoT[i] - 'a' + 26 - count) % 26 + 'a');
             new String(cifradoT);
         }
+
         System.out.println(cifradoT);
+    }
+
+    public void insertContent(){
+        objectJson.getJsonObject().put("decifrado",decifrado);
     }
 }
 
