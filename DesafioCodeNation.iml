@@ -8,5 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="json-20180813" level="project" />
+    <orderEntry type="library" name="httpClient" level="project" />
+    <orderEntry type="library" name="httpMime" level="project" />
   </component>
 </module>
