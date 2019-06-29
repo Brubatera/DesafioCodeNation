@@ -44,8 +44,6 @@ public class Decryptor {
                 decifrado = new String(cifradoT);
             }
         }
-        ObjectJson.getJsonObject().put("decifrado", decifrado);
-        System.out.println(decifrado);
     }
 }
 
