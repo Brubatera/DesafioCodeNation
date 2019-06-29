@@ -21,16 +21,12 @@ public class Decryptor {
         return cifrado = objectJson.getJsonObject().getString("cifrado");
     }
 
-    public void setCifrado(String cifrado) {
-        this.cifrado = cifrado;
-    }
-
     public String getDecifrado() {
-        return decifrado;
+        return objectJson.getJsonObject().getString("decifrado");
     }
 
     public String getResumo_criptografico() {
-        return resumo_criptografico;
+        return objectJson.getJsonObject().getString("resumo_criptografico");
     }
 
     public void decryptorFunc() {
@@ -49,7 +45,7 @@ public class Decryptor {
 
         System.out.println(decifrado);
 
-        objectJson.writeToAnswer(decifrado,func.geraResumo(decifrado) );
+        objectJson.writeToAnswer(decifrado, func.geraResumo(decifrado));
     }
 }
 

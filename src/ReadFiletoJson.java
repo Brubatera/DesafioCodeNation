@@ -1,12 +1,10 @@
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.rmi.server.ExportException;
 import java.util.stream.Stream;
 
 public class ReadFiletoJson {
@@ -40,14 +38,13 @@ public class ReadFiletoJson {
         return jsonObject;
     }
 
-    public void writeToAnswer(String decifrado, String resumo){
+    public void writeToAnswer(String decifrado, String resumo) {
         jsonObject.put("decifrado", decifrado);
         jsonObject.put("resumo_criptografico", resumo);
 
-        try(FileWriter file = new FileWriter("answer.json")){
+        try (FileWriter file = new FileWriter("answer.json")) {
             file.write(String.valueOf(jsonObject));
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

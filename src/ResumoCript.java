@@ -1,4 +1,3 @@
-import java.lang.reflect.Executable;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
@@ -19,5 +18,4 @@ public class ResumoCript {
         }
         return resumo;
     }
-
 }
