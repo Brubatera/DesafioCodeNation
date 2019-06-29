@@ -48,5 +48,4 @@ public class ReadFiletoJson {
             e.printStackTrace();
         }
     }
-
 }

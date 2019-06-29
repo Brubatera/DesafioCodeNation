@@ -46,7 +46,7 @@ public class GetJson {
 //        } finally {
 //            con.disconnect();
 //        }
-        contentC.decryptorFunc();
 
+        contentC.decryptorFunc();
     }
 }
