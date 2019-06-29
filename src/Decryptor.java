@@ -5,10 +5,12 @@ public class Decryptor {
     private String token = null;
     private String decifrado = null;
     private String resumo_criptografico = null;
-    private ReadFiletoJson ObjectJson = new ReadFiletoJson();
+    private ReadFiletoJson objectJson = new ReadFiletoJson();
+
+    ResumoCript func = new ResumoCript();
 
     public int getNumero_casas() {
-        return ObjectJson.getJsonObject().getInt("numero_casas");
+        return objectJson.getJsonObject().getInt("numero_casas");
     }
 
     public void setNumero_casas(int numero_casas) {
@@ -16,7 +18,7 @@ public class Decryptor {
     }
 
     public String getCifrado() {
-        return cifrado = ObjectJson.getJsonObject().getString("cifrado");
+        return cifrado = objectJson.getJsonObject().getString("cifrado");
     }
 
     public void setCifrado(String cifrado) {
@@ -44,6 +46,10 @@ public class Decryptor {
                 decifrado = new String(cifradoT);
             }
         }
+
+        System.out.println(decifrado);
+
+        objectJson.writeToAnswer(decifrado,func.geraResumo(decifrado) );
     }
 }
 

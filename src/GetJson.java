@@ -1,3 +1,6 @@
+import netscape.javascript.JSObject;
+import org.json.JSONObject;
+
 import java.io.*;
 import java.net.*;
 
@@ -8,8 +11,9 @@ public class GetJson {
     public static void main(String[] args) throws MalformedURLException, ProtocolException, IOException {
 
         FileWriter fr = null;
-        String url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=e9895bb76c916cd9abec54a75b3228a449d13d63";
-        Decryptor content = new Decryptor();
+        JSONObject jsonObject = new JSONObject();
+        String url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=e9895bb76c916cd9abec54a75b3228a449d13d63\n";
+        Decryptor contentC = new Decryptor();
 
 //        try {
 //
@@ -31,7 +35,7 @@ public class GetJson {
 //                    content.append(System.lineSeparator());
 //                }
 //
-//                fr = new FileWriter("answer.json");
+//                fr = new FileWriter("answer2.json");
 //                fr.write(content.toString());
 //                fr.close();
 //            }
@@ -40,7 +44,7 @@ public class GetJson {
 //        } finally {
 //            con.disconnect();
 //        }
+        contentC.decryptorFunc();
 
-        content.decryptorFunc();
     }
 }
