@@ -1,10 +1,13 @@
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
+import java.net.URL;
 
 public class GetJson {
 
@@ -18,37 +21,37 @@ public class GetJson {
         Decryptor contentC = new Decryptor();
         PostJson post = new PostJson();
 
-//        try {
-//
-//            URL myurl = new URL(url);
-//            con = (HttpURLConnection) myurl.openConnection();
-//
-//            con.setRequestMethod("GET");
-//
-//            StringBuilder content;
-//
-//            try (BufferedReader in = new BufferedReader(
-//                    new InputStreamReader(con.getInputStream()))) {
-//
-//                String line;
-//                content = new StringBuilder();
-//
-//                while ((line = in.readLine()) != null) {
-//                    content.append(line);
-//                    content.append(System.lineSeparator());
-//                }
-//
-//                fr = new FileWriter("answer2.json");
-//                fr.write(content.toString());
-//                fr.close();
-//            }
-//
-//
-//        } finally {
-//            con.disconnect();
-//        }
+        try {
 
-        //contentC.decryptorFunc();
+            URL myurl = new URL(url);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setRequestMethod("GET");
+
+            StringBuilder content;
+
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+
+                String line;
+                content = new StringBuilder();
+
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+
+                fr = new FileWriter("answer2.json");
+                fr.write(content.toString());
+                fr.close();
+            }
+
+
+        } finally {
+            con.disconnect();
+        }
+
+        contentC.decryptorFunc();
         post.sendPost();
     }
 }
