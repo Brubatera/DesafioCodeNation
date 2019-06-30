@@ -15,8 +15,7 @@ public class GetJson {
 
     public static void main(String[] args) throws MalformedURLException, ProtocolException, IOException {
 
-        FileWriter fr = null;
-        JSONObject jsonObject = new JSONObject();
+        FileWriter fr;
         String url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=e9895bb76c916cd9abec54a75b3228a449d13d63\n";
         Decryptor contentC = new Decryptor();
         PostJson post = new PostJson();
